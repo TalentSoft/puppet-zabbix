@@ -221,7 +221,7 @@ describe 'zabbix::server' do
             nodeid: '0',
             nodenoevents: '0',
             nodenohistory: '0',
-            pidfile: '/var/run/zabbix/zabbix_server.pid',
+            pidfile: '/run/zabbix/zabbix_server.pid',
             proxyconfigfrequency: '3600',
             proxydatafrequency: '1',
             senderfrequency: '30',
@@ -286,7 +286,7 @@ describe 'zabbix::server' do
         it { is_expected.to contain_file('/etc/zabbix/zabbix_server.conf').with_content %r{^NodeID=0$} }
         it { is_expected.to contain_file('/etc/zabbix/zabbix_server.conf').with_content %r{^NodeNoEvents=0} }
         it { is_expected.to contain_file('/etc/zabbix/zabbix_server.conf').with_content %r{^NodeNoHistory=0} }
-        it { is_expected.to contain_file('/etc/zabbix/zabbix_server.conf').with_content %r{^PidFile=/var/run/zabbix/zabbix_server.pid} }
+        it { is_expected.to contain_file('/etc/zabbix/zabbix_server.conf').with_content %r{^PidFile=/run/zabbix/zabbix_server.pid} }
         it { is_expected.to contain_file('/etc/zabbix/zabbix_server.conf').with_content %r{^ProxyConfigFrequency=3600} }
         it { is_expected.to contain_file('/etc/zabbix/zabbix_server.conf').with_content %r{^ProxyDataFrequency=1} }
         it { is_expected.to contain_file('/etc/zabbix/zabbix_server.conf').with_content %r{^SenderFrequency=30} }

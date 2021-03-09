@@ -244,7 +244,7 @@ describe 'zabbix::proxy' do
               logslowqueries: '0',
               mode: '0',
               offlinebuffer: '1',
-              pidfile: '/var/run/zabbix/proxy_server.pid',
+              pidfile: '/run/zabbix/proxy_server.pid',
               snmptrapper: '0',
               snmptrapperfile: '/tmp/zabbix_traps.tmp',
               sshkeylocation: '/home/zabbix/.ssh/',
@@ -279,7 +279,7 @@ describe 'zabbix::proxy' do
           it { is_expected.to contain_file('/etc/zabbix/zabbix_proxy.conf').with_content %r{^LogFile=/var/log/zabbix/proxy_server.log$} }
           it { is_expected.to contain_file('/etc/zabbix/zabbix_proxy.conf').with_content %r{^LogFileSize=15$} }
           it { is_expected.to contain_file('/etc/zabbix/zabbix_proxy.conf').with_content %r{^DebugLevel=4$} }
-          it { is_expected.to contain_file('/etc/zabbix/zabbix_proxy.conf').with_content %r{^PidFile=/var/run/zabbix/proxy_server.pid$} }
+          it { is_expected.to contain_file('/etc/zabbix/zabbix_proxy.conf').with_content %r{^PidFile=/run/zabbix/proxy_server.pid$} }
           it { is_expected.to contain_file('/etc/zabbix/zabbix_proxy.conf').with_content %r{^DBHost=localhost$} }
           it { is_expected.to contain_file('/etc/zabbix/zabbix_proxy.conf').with_content %r{^DBName=zabbix-proxy$} }
           it { is_expected.to contain_file('/etc/zabbix/zabbix_proxy.conf').with_content %r{^DBSchema=zabbix-proxy$} }

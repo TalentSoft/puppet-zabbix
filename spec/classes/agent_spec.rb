@@ -244,7 +244,7 @@ describe 'zabbix::agent' do
               logfilesize: '4',
               logfile: '/var/log/zabbix/zabbix_agentd.log',
               logremotecommands: '0',
-              pidfile: '/var/run/zabbix/zabbix_agentd.pid',
+              pidfile: '/run/zabbix/zabbix_agentd.pid',
               refreshactivechecks: '120',
               server: '192.168.1.1',
               serveractive: '192.168.1.1',
@@ -277,7 +277,7 @@ describe 'zabbix::agent' do
           it { is_expected.to contain_file('/etc/zabbix/zabbix_agentd.conf').with_content %r{^LogFileSize=4$} }
           it { is_expected.to contain_file('/etc/zabbix/zabbix_agentd.conf').with_content %r{^LogFile=/var/log/zabbix/zabbix_agentd.log$} }
           it { is_expected.to contain_file('/etc/zabbix/zabbix_agentd.conf').with_content %r{^LogRemoteCommands=0$} }
-          it { is_expected.to contain_file('/etc/zabbix/zabbix_agentd.conf').with_content %r{^PidFile=/var/run/zabbix/zabbix_agentd.pid$} }
+          it { is_expected.to contain_file('/etc/zabbix/zabbix_agentd.conf').with_content %r{^PidFile=/run/zabbix/zabbix_agentd.pid$} }
           it { is_expected.to contain_file('/etc/zabbix/zabbix_agentd.conf').with_content %r{^RefreshActiveChecks=120$} }
           it { is_expected.to contain_file('/etc/zabbix/zabbix_agentd.conf').with_content %r{^Server=192.168.1.1$} }
           it { is_expected.to contain_file('/etc/zabbix/zabbix_agentd.conf').with_content %r{^ServerActive=192.168.1.1$} }
